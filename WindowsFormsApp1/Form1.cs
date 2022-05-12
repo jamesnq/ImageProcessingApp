@@ -26,7 +26,6 @@ namespace WindowsFormsApp1
             Mat img_gray = new Mat();
             Mat img_sobel = new Mat();
             Cv2.CvtColor(img, img_gray, ColorConversionCodes.BGR2GRAY);
-
             Mat grad_x = new Mat(), grad_y = new Mat();
             Mat abs_grad_x = new Mat(), abs_grad_y = new Mat();
             Cv2.Sobel(img_gray, grad_x, MatType.CV_16U, 1, 0, 3);
@@ -44,13 +43,16 @@ namespace WindowsFormsApp1
         private void split_image_btn(object sender, EventArgs e)
         {
             rgb = Cv2.Split(img);
+            // Enable cac nut
             radioButton1.Enabled = true;
             radioButton2.Enabled = true;
             radioButton3.Enabled = true;
             R.Enabled = true;
             trackBar1.Enabled = true;
+            // Hien thi anh
             pictureBox2.Image = img.ToBitmap();
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            // Hien thong bao
             MessageBox.Show("Split successful");
         }
 
@@ -66,8 +68,10 @@ namespace WindowsFormsApp1
 
         private void delete_image_btn(object sender, EventArgs e)
         {
+            // Xoa anh
             pictureBox1.Image = null;
-            pictureBox2.Image =null;
+            pictureBox2.Image = null;
+            // Disable cac nut
             sobelImageBtn.Enabled = false;
             splitImageBtn.Enabled = false;
             deleteImageBtn.Enabled = false;
@@ -91,6 +95,7 @@ namespace WindowsFormsApp1
             // Hien thi anh len Picture Box
             pictureBox1.Image = img.ToBitmap();
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            // Enable cac button
             sobelImageBtn.Enabled = true;
             splitImageBtn.Enabled = true;
             deleteImageBtn.Enabled = true;
@@ -143,7 +148,7 @@ namespace WindowsFormsApp1
         {
             label2.Text = trackBar1.Value.ToString();
             float value1 = 0.4f;
-            gma = value1 * trackBar1.Value / 10;
+            gma = value1 * trackBar1.Value / 10 + 1;
             Bitmap bm = img.ToBitmap();
             Graphics g = Graphics.FromImage(bm);
             ImageAttributes ia = new ImageAttributes();
@@ -153,26 +158,6 @@ namespace WindowsFormsApp1
             g.DrawImage(newBitmap, new Rectangle(0, 0, newBitmap.Width, newBitmap.Height), 0, 0, newBitmap.Width, newBitmap.Height, GraphicsUnit.Pixel, ia);
             pictureBox2.Image = bm;
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -213,7 +198,7 @@ namespace WindowsFormsApp1
                 if(img100x100Added == false)
                 {
                     resizedListBox.Items.Add("100x100");
-                    img100x100Added = false;
+                    img100x100Added = true;
                 }
             }
             else if (newSizeList.SelectedItem.ToString() == "200x200")
@@ -223,7 +208,7 @@ namespace WindowsFormsApp1
                 if (img200x200Added == false)
                 {
                     resizedListBox.Items.Add("200x200");
-                    img200x200Added = false;
+                    img200x200Added = true;
                 }
             }
             else if (newSizeList.SelectedItem.ToString() == "300x300")
@@ -233,7 +218,7 @@ namespace WindowsFormsApp1
                 if (img300x300Added == false)
                 {
                     resizedListBox.Items.Add("300x300");
-                    img300x300Added = false;
+                    img300x300Added = true;
                 }
             }
         }

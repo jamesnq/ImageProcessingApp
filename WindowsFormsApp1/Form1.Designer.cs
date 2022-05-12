@@ -245,7 +245,6 @@
             this.resizeGroupBox.TabIndex = 16;
             this.resizeGroupBox.TabStop = false;
             this.resizeGroupBox.Text = "Resize";
-            this.resizeGroupBox.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // resizedListBox
             // 
@@ -292,7 +291,6 @@
             this.newSizeList.Name = "newSizeList";
             this.newSizeList.Size = new System.Drawing.Size(121, 24);
             this.newSizeList.TabIndex = 0;
-            this.newSizeList.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Form1
             // 
@@ -321,7 +319,6 @@
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Image";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
