@@ -94,8 +94,6 @@
             this.textBox1.Size = new System.Drawing.Size(243, 22);
             this.textBox1.TabIndex = 4;
             this.textBox1.Text = "C:\\Users\\malco\\OneDrive\\Pictures\\_DSC2173.JPG";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(31, 29);
@@ -240,6 +238,7 @@
             this.resizeGroupBox.Controls.Add(this.newSizeLabel);
             this.resizeGroupBox.Controls.Add(this.newSizeList);
             this.resizeGroupBox.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.resizeGroupBox.Enabled = false;
             this.resizeGroupBox.Location = new System.Drawing.Point(556, 537);
             this.resizeGroupBox.Name = "resizeGroupBox";
             this.resizeGroupBox.Size = new System.Drawing.Size(447, 100);

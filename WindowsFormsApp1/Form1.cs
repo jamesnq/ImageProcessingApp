@@ -21,11 +21,6 @@ namespace WindowsFormsApp1
         }
         Mat img = new Mat();
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void sobel_btn(object sender, EventArgs e)
         {
             Mat img_gray = new Mat();
@@ -78,6 +73,7 @@ namespace WindowsFormsApp1
             deleteImageBtn.Enabled = false;
             convertToGrayBtn.Enabled = false;
             gauseFilterBtn.Enabled = false;
+            resizeGroupBox.Enabled = false;
         }
 
         private void convert_to_gray_btn(object sender, EventArgs e)
@@ -100,6 +96,7 @@ namespace WindowsFormsApp1
             deleteImageBtn.Enabled = true;
             convertToGrayBtn.Enabled = true;
             gauseFilterBtn.Enabled = true;
+            resizeGroupBox.Enabled = true;
         }
 
         private void open_file_btn(object sender, EventArgs e)
